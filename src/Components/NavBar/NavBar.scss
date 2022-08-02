@@ -1,0 +1,41 @@
+@use "../../Styles/GlobalStyle" as *;
+
+.NavBar {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+
+  li {
+    font-family: "Karla", sans-serif;
+
+    display: flex;
+    flex-direction: column;
+
+    font-size: 1.2rem;
+
+    color: $fonte;
+
+    cursor: pointer;
+
+    &::after {
+      content: "";
+
+      margin-top: 3px;
+
+      opacity: 0;
+
+      transition: all 0.4s ease-in-out;
+    }
+
+    &.active::after {
+      content: "";
+
+      width: 50%;
+      height: 2px;
+
+      background-color: $border;
+
+      opacity: 1;
+    }
+  }
+}

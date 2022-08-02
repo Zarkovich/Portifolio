@@ -1,0 +1,17 @@
+@use "../../Styles/GlobalStyle" as *;
+
+.Logo {
+  display: flex;
+
+  h1 {
+    font-family: "Karla", sans-serif;
+
+    color: $title;
+    margin: 0 2px;
+  }
+
+  h1:nth-child(1),
+  h1:nth-child(3) {
+    color: $border;
+  }
+}
