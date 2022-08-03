@@ -1,7 +1,9 @@
 @use "../../Styles/GlobalStyle" as *;
 
 .NavBar {
-  position: fixed;
+  z-index: 999;
+
+  position: sticky;
 
   width: 100%;
   padding: 10px 0;
@@ -14,6 +16,8 @@
   }
 
   .Menus__colapse {
+    position: fixed;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,26 +73,75 @@
   }
 }
 
-// @media screen and (min-width: 1200px) {
-//   .NavBar {
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: nowrap;
+@media screen and (min-width: 1200px) {
+  .NavBar {
+    position: sticky;
 
-//     width: 100%;
+    display: flex;
+    justify-content: space-between;
 
-//     div:first-child {
-//       width: 10%;
-//     }
-//   }
+    width: 100%;
 
-//   .Menus__colapse {
-//     // display: flex;
-//     // flex-direction: row;
-//     // justify-content: space-around;
+    padding: 20px 0;
 
-//     transform: none;
-//     padding: 0;
-//     top: 0;
-//   }
-// }
+    list-style: none;
+
+    div:first-child {
+      margin-left: 25px;
+    }
+
+    .Menus__colapse {
+      position: sticky;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      width: 40%;
+      height: 40px;
+
+      background-color: transparent;
+
+      transition: none;
+
+      li {
+        font-family: "Karla", sans-serif;
+
+        display: flex;
+        flex-direction: column;
+
+        margin: 0;
+
+        font-size: 1.8rem;
+
+        color: $fonte;
+
+        cursor: pointer;
+
+        &::after {
+          content: "";
+
+          margin-top: 3px;
+
+          opacity: 0;
+
+          transition: all 0.4s ease-in-out;
+        }
+
+        &.active::after {
+          content: "";
+
+          width: 50%;
+          height: 2px;
+
+          background-color: $border;
+
+          opacity: 1;
+        }
+      }
+    }
+    .Menus__colapse--Close {
+      transform: none;
+    }
+  }
+}
