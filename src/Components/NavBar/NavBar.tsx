@@ -7,20 +7,25 @@ const NavBar = () => {
   const [localNav, setLocalNav] = useState();
   const [isOpen, setIsOpen] = useState(false);
 
+  // Change nav color when scrolling
+  const [color, setColor] = useState(false);
+  const changeColor = () => {
+    window.scrollY >= 90 ? setColor(true) : setColor(false);
+  };
+
+  window.addEventListener("scroll", changeColor);
+
+  // Location in page nav
   const handleNavLink = (e: any) => {
     setLocalNav(e.target.innerText);
   };
 
-  const changeOpenMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <nav>
-      <ul className='NavBar'>
+      <ul className={`NavBar ${color ? "NavBar-bg" : ""}`}>
         <div>
           <Logo />
-          <MenuBurger onClick={changeOpenMenu} checked={isOpen} />
+          <MenuBurger onClick={() => setIsOpen(!isOpen)} checked={isOpen} />
         </div>
         <div
           className={`Menus__colapse ${isOpen ? "" : "Menus__colapse--Close"}`}
