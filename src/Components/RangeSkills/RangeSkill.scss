@@ -1,19 +1,19 @@
 .fora {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 
-  margin: auto;
+    margin: auto;
 
-  height: 5px;
-
-  border-radius: 10px;
-
-  background-color: #13171e;
-
-  .dentro {
-    height: 100%;
-    width: 10%;
+    height: 5px;
 
     border-radius: 10px;
-  }
+
+    background-color: #13171e;
+
+    .dentro {
+        height: 100%;
+        width: 10%;
+
+        border-radius: 10px;
+    }
 }

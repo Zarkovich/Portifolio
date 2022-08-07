@@ -1,0 +1,70 @@
+@use "../../Styles/GlobalStyle" as *;
+
+.Skill {
+    padding-top: 60px;
+
+    height: 100vh;
+
+    background-color: $dark;
+}
+
+.Skills__Titulo {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    column-gap: 15px;
+
+    // margin: 100px 0 20px 0;
+
+    & > *:first-child {
+        color: $border;
+    }
+
+    h1 {
+        color: $title;
+    }
+}
+
+.Skills__Container {
+    display: grid;
+    grid-template-columns: 25% 25%;
+    justify-content: center;
+    gap: 55px;
+
+    .Skill__Images__Progress {
+        text-align: center;
+
+        h3 {
+            text-align: center;
+            font-size: 1rem;
+            color: $title;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .Skill {
+        padding-top: 150px;
+
+        height: 100%;
+    }
+
+    .Skills__Titulo {
+        margin-bottom: 70px;
+    }
+
+    .Skills__Container {
+        display: flex;
+        justify-content: space-evenly;
+
+        gap: 0;
+
+        .Skill__Images__Progress {
+            width: 5rem;
+        }
+    }
+}
