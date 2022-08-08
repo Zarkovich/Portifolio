@@ -1,15 +1,20 @@
 import "./Card.scss";
-import ImgReference from "../Img/foto.png";
 
-function Card() {
+type CarType = {
+    image: string;
+    title: string;
+    description: string;
+};
+
+function Card({ image, title, description }: CarType) {
     return (
         <div className='Card'>
-            <img src={ImgReference} alt='Foto' />
-            <h1>Title</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-                dolorem officia ab deleniti optio a.
-            </p>
+            <div
+                className='Card__image'
+                style={{ backgroundImage: `url(${image})` }}
+            ></div>
+            <h1>{title}</h1>
+            <p>{description}</p>
         </div>
     );
 }

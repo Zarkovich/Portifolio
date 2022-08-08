@@ -1,10 +1,15 @@
 import "./Projetos.scss";
-import Card from "../../assets/Card/Card";
+import { BsDiamondFill } from "react-icons/bs";
+import ProjetosSlide from "./ProjetosSlide";
 
 function Projetos() {
     return (
         <div className='Projetos'>
-            <Card />
+            <div className='Projetos__titulo'>
+                <BsDiamondFill />
+                <h1>Projetos</h1>
+            </div>
+            <ProjetosSlide />
         </div>
     );
 }

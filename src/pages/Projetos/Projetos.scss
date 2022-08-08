@@ -2,4 +2,20 @@
 
 .Projetos {
     background-color: $dark;
+
+    .Projetos__titulo {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 10px;
+
+        margin-bottom: 15px;
+
+        *:first-child {
+            color: $border;
+        }
+        h1 {
+            color: $title;
+        }
+    }
 }
