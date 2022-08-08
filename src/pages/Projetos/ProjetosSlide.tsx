@@ -1,17 +1,17 @@
-import { ProjetosData } from "./ProjetosData";
-import Card from "../../assets/Card/Card";
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 import "./ProjetosSlide.scss";
+import { ProjetosData } from "./ProjetosData";
+import Card from "../../assets/Card/Card";
+import { useRef } from "react";
 
 const Span = styled.span`
     position: absolute;
 
-    background-color: #00000063;
+    background-color: #00000096;
     color: #ffffff4c;
 
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 
     transition: all 0.2s linear;
 
@@ -30,55 +30,45 @@ const Span = styled.span`
     &:last-child {
         right: 10px;
     }
+
+    @media (min-width: 1200px) {
+        position: relative;
+    }
 `;
 
 function ProjetosSlide() {
-    const [current, setCurrent] = useState<number>(0);
-    const [windowSize, setWindowSize] = useState<boolean>(false);
-    const length = ProjetosData.length;
+    const carroselRef = useRef<HTMLDivElement | null>(null);
 
-    function nextSlide() {
-        setCurrent(current === length - 1 ? 0 : current + 1);
-    }
-    function prevSlide() {
-        setCurrent(current === 0 ? length - 1 : current - 1);
-    }
-
-    if (!ProjetosData || !ProjetosData.length) {
-        return <h1>Perdi os Projetos!</h1>;
+    function leftClick(e: React.MouseEvent) {
+        e.preventDefault();
+        console.log(carroselRef.current?.offsetWidth);
+        if (carroselRef.current) {
+            carroselRef.current.scrollLeft -= carroselRef.current.offsetWidth;
+        }
     }
 
-    useEffect(() => {
-        if (window.innerWidth >= 1200) setWindowSize(true);
-    }, [window.innerWidth]);
+    function rightClick(e: React.MouseEvent) {
+        e.preventDefault();
+        if (carroselRef.current) {
+            carroselRef.current.scrollLeft += carroselRef.current.offsetWidth;
+        }
+    }
 
-    console.log(windowSize);
     return (
         <section className='Slide'>
-            <Span onClick={prevSlide}>{"<"}</Span>
-            {ProjetosData.map((data, index) => {
-                return (
-                    <>
-                        {!windowSize && (
-                            <div
-                                className={
-                                    index === current ? "slide active" : "slide"
-                                }
-                                key={index}
-                            >
-                                {index === current && (
-                                    <Card
-                                        image={data.image}
-                                        title={data.title}
-                                        description={data.description}
-                                    />
-                                )}
-                            </div>
-                        )}
-                    </>
-                );
-            })}
-            <Span onClick={nextSlide}>{">"}</Span>
+            <Span onClick={leftClick}>{"<"}</Span>
+            <div className='Slide_card__container' ref={carroselRef}>
+                {ProjetosData.map((item, index) => (
+                    <div className='Slide__card' key={index}>
+                        <Card
+                            image={item.image}
+                            title={item.title}
+                            description={item.description}
+                        />
+                    </div>
+                ))}
+            </div>
+            <Span onClick={rightClick}>{">"}</Span>
         </section>
     );
 }

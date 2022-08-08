@@ -3,6 +3,10 @@
 .Projetos {
     background-color: $dark;
 
+    height: 100vh;
+
+    padding-top: 100px;
+
     .Projetos__titulo {
         display: flex;
         align-items: baseline;

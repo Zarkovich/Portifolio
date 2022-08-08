@@ -6,6 +6,28 @@
     box-sizing: border-box;
 }
 
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: $border transparent;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: $dark;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: $border;
+    border-radius: 10px;
+}
+
 body {
     height: 100%;
     background: rgb(32, 39, 51);
@@ -16,7 +38,3 @@ body {
         rgba(32, 39, 52, 1) 100%
     );
 }
-
-// .App {
-//     height: 100vh;
-// }

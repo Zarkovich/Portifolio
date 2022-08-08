@@ -1,18 +1,17 @@
 import "./Card.scss";
 
-type CarType = {
+type CardType = {
     image: string;
     title: string;
     description: string;
 };
 
-function Card({ image, title, description }: CarType) {
+function Card({ image, title, description }: CardType) {
     return (
         <div className='Card'>
-            <div
-                className='Card__image'
-                style={{ backgroundImage: `url(${image})` }}
-            ></div>
+            <div className='Card__image'>
+                <img src={image} alt='' />
+            </div>
             <h1>{title}</h1>
             <p>{description}</p>
         </div>
