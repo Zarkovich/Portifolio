@@ -4,7 +4,7 @@ import ProjetosSlide from "./ProjetosSlide";
 
 function Projetos() {
     return (
-        <div className='Projetos'>
+        <div className='Projetos' title='Projetos' id='Projetos'>
             <div className='Projetos__titulo'>
                 <BsDiamondFill />
                 <h1>Projetos</h1>

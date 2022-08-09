@@ -4,6 +4,8 @@ import Header from "./Components/Header/Header";
 import About from "./pages/About/About";
 import Skills from "./pages/Skills/Skills";
 import Projetos from "./pages/Projetos/Projetos";
+import Contato from "./pages/Contato/Contato";
+import Footer from "./Components/Footer/Footer";
 
 const App = () => {
     return (
@@ -13,6 +15,8 @@ const App = () => {
             <About />
             <Skills />
             <Projetos />
+            <Contato />
+            <Footer />
         </div>
     );
 };

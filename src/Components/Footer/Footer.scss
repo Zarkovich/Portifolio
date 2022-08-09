@@ -1,0 +1,23 @@
+@use "../../Styles/GlobalStyle" as *;
+
+.Footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #191f28;
+
+    color: $fonte;
+
+    border-bottom: 3px solid $border;
+
+    height: 40px;
+}
+
+@media (min-width: 1200px) {
+    .Footer {
+        margin-top: 35px;
+
+        height: 70px;
+    }
+}

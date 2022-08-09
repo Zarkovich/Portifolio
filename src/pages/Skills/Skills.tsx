@@ -9,7 +9,7 @@ import RangeSkill from "../../Components/RangeSkills/RangeSkill";
 
 function Skills() {
     return (
-        <div className='Skill'>
+        <div className='Skill' title='Skills' id='Skills'>
             <div className='Skills__Titulo'>
                 <BsDiamondFill />
                 <h1>Skills</h1>

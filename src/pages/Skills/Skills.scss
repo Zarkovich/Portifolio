@@ -27,12 +27,14 @@
 
 .Skills__Container {
     display: grid;
-    grid-template-columns: 25% 25%;
+    grid-template-columns: auto auto;
     justify-content: center;
     gap: 55px;
 
     .Skill__Images__Progress {
         text-align: center;
+
+        width: 80px;
 
         h3 {
             text-align: center;

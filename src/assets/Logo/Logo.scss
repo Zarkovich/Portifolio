@@ -1,16 +1,14 @@
 @use "../../Styles/GlobalStyle" as *;
 
 .Logo {
-  width: 13rem;
-  h1 {
-    font-family: "Karla", sans-serif;
+    width: 14rem;
+    h1 {
+        color: $title;
+        margin: 0 2px;
+    }
 
-    color: $title;
-    margin: 0 2px;
-  }
-
-  h1:nth-child(1),
-  h1:nth-child(3) {
-    color: $border;
-  }
+    h1:nth-child(1),
+    h1:nth-child(3) {
+        color: $border;
+    }
 }
