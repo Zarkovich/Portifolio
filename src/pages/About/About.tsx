@@ -35,15 +35,10 @@ const About = () => (
                 <h1>SOBRE</h1>
             </div>
             <h2>Conheça um pouco sobre mim</h2>
+            <p>Sou desenvolvedor FULL-STACK em constante aprendizagem.</p>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
-                repellendus iusto corporis error sed fuga ipsam magni rem nisi
-                animi.
-            </p>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Voluptate accusantium ipsum quaerat praesentium sunt similique
-                a, temporibus saepe quam aliquam?
+                Iniciando na carreira como desenvolvedo, e procurando sempre o
+                desenvolvimento profissional e pessoal.
             </p>
         </div>
     </div>

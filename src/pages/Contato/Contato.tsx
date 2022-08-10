@@ -15,12 +15,7 @@ function Contato() {
                 <h1>Contato</h1>
             </div>
             <div className='Contato__Description'>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Ut, impedit a quaerat dolor optio quasi veritatis veniam
-                    nihil magni fuga, rerum ratione eligendi amet molestias
-                    dolore. Sequi veritatis tenetur nisi?
-                </p>
+                <p>Entre em contato:</p>
             </div>
             <div className='Contato__links'>
                 <p>
