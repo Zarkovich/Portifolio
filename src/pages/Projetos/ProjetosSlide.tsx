@@ -1,8 +1,14 @@
 import styled from "styled-components";
 import "./ProjetosSlide.scss";
-import { ProjetosData } from "./ProjetosData";
 import Card from "../../assets/Card/Card";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import axios from "axios";
+
+interface DataProps {
+    title: string;
+    description: string;
+    image: string;
+}
 
 const Span = styled.span`
     position: absolute;
@@ -38,6 +44,14 @@ const Span = styled.span`
 
 function ProjetosSlide() {
     const carroselRef = useRef<HTMLDivElement | null>(null);
+    const [ProjetosData, setProjetosData] = useState([]);
+
+    useEffect(() => {
+        axios.get("https://api-notion-database.herokuapp.com/").then((item) => {
+            setProjetosData(item.data);
+            console.log(ProjetosData);
+        });
+    }, []);
 
     function leftClick(e: React.MouseEvent) {
         e.preventDefault();
@@ -58,7 +72,7 @@ function ProjetosSlide() {
         <section className='Slide'>
             <Span onClick={leftClick}>{"<"}</Span>
             <div className='Slide_card__container' ref={carroselRef}>
-                {ProjetosData.map((item, index) => (
+                {ProjetosData.map((item: DataProps, index: number) => (
                     <div className='Slide__card' key={index}>
                         <Card
                             image={item.image}
