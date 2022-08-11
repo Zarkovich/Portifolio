@@ -27,8 +27,17 @@
     .Slide {
         margin: auto;
 
-        max-width: 51%;
-
         user-select: none;
+
+        .Slide_card__container {
+            max-width: 100%;
+
+            display: flex;
+            justify-content: center;
+
+            .Slide__card {
+                margin: 0 25px;
+            }
+        }
     }
 }
