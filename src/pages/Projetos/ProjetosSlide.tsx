@@ -3,6 +3,7 @@ import "./ProjetosSlide.scss";
 import Card from "../../assets/Card/Card";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import Loading from "../../Components/Loading/index";
 
 interface DataProps {
     title: string;
@@ -70,19 +71,25 @@ function ProjetosSlide() {
 
     return (
         <section className='Slide'>
-            <Span onClick={leftClick}>{"<"}</Span>
-            <div className='Slide_card__container' ref={carroselRef}>
-                {ProjetosData.map((item: DataProps, index: number) => (
-                    <div className='Slide__card' key={index}>
-                        <Card
-                            image={item.image}
-                            title={item.title}
-                            description={item.description}
-                        />
+            {ProjetosData ? (
+                <>
+                    <Span onClick={leftClick}>{"<"}</Span>
+                    <div className='Slide_card__container' ref={carroselRef}>
+                        {ProjetosData.map((item: DataProps, index: number) => (
+                            <div className='Slide__card' key={index}>
+                                <Card
+                                    image={item.image}
+                                    title={item.title}
+                                    description={item.description}
+                                />
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
-            <Span onClick={rightClick}>{">"}</Span>
+                    <Span onClick={rightClick}>{">"}</Span>
+                </>
+            ) : (
+                <Loading />
+            )}
         </section>
     );
 }
