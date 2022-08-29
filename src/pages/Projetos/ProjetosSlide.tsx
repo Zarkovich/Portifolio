@@ -71,7 +71,7 @@ function ProjetosSlide() {
 
     return (
         <section className='Slide'>
-            {ProjetosData ? (
+            {ProjetosData.length > 0 ? (
                 <>
                     <Span onClick={leftClick}>{"<"}</Span>
                     <div className='Slide_card__container' ref={carroselRef}>
