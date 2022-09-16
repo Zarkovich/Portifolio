@@ -8,18 +8,21 @@ interface MenuBurgerProps {
 
 const MenuBurger = ({ isOpen, onClick }: MenuBurgerProps) => {
     return (
-        <div>
-            <input
+        <div
+            className={`checkbox__menu ${isOpen && "active"}`}
+            onClick={onClick}
+        >
+            {/* <input
                 type='checkbox'
                 id='checkbox__menu'
                 defaultChecked={isOpen}
                 onClick={onClick}
-            />
-            <label htmlFor='checkbox__menu' className='bars__contianer'>
+            /> */}
+            <div className='bars__contianer'>
                 <span></span>
                 <span></span>
                 <span></span>
-            </label>
+            </div>
         </div>
     );
 };
