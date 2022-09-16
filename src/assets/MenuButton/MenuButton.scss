@@ -28,6 +28,14 @@
     }
 }
 
+.checkbox__menu {
+    @media screen and (min-width: 1200px) {
+        & {
+            display: none;
+        }
+    }
+}
+
 .checkbox__menu.active > .bars__contianer {
     transform: rotate(180deg) translateX(5px);
 
