@@ -49,15 +49,16 @@ function ProjetosSlide() {
     const [ProjetosData, setProjetosData] = useState([]);
 
     useEffect(() => {
-        axios.get("https://apinotionplease.onrender.com/").then((item) => {
-            setProjetosData(item.data);
-            console.log(ProjetosData);
+        axios.get("https://apinotionplease.onrender.com/").then(({ data }) => {
+            const SortProjects = data.sort((a: DataProps, b: DataProps) =>
+                a.title > b.title ? 1 : -1
+            );
+            setProjetosData(SortProjects);
         });
     }, []);
 
     function leftClick(e: React.MouseEvent) {
         e.preventDefault();
-        console.log(carroselRef.current?.offsetWidth);
         if (carroselRef.current) {
             carroselRef.current.scrollLeft -= carroselRef.current.offsetWidth;
         }
