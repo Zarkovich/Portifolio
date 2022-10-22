@@ -9,6 +9,7 @@ interface DataProps {
     title: string;
     description: string;
     image: string;
+    link: string;
 }
 
 const Span = styled.span`
@@ -48,7 +49,7 @@ function ProjetosSlide() {
     const [ProjetosData, setProjetosData] = useState([]);
 
     useEffect(() => {
-        axios.get("https://api-notion-database.herokuapp.com/").then((item) => {
+        axios.get("https://apinotionplease.onrender.com/").then((item) => {
             setProjetosData(item.data);
             console.log(ProjetosData);
         });
@@ -78,6 +79,7 @@ function ProjetosSlide() {
                         {ProjetosData.map((item: DataProps, index: number) => (
                             <div className='Slide__card' key={index}>
                                 <Card
+                                    link={item.link}
                                     image={item.image}
                                     title={item.title}
                                     description={item.description}
