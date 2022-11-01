@@ -1,11 +1,11 @@
-import "./About.scss";
-import MyPhoto from "../../assets/Img/foto.png";
+import './About.scss';
+import MyPhoto from '../../assets/Img/foto.png';
 import {
     BsEnvelopeFill,
     BsGithub,
     BsLinkedin,
     BsDiamondFill,
-} from "react-icons/bs";
+} from 'react-icons/bs';
 
 const About = () => (
     <div className='About' title='About'>
@@ -37,7 +37,7 @@ const About = () => (
             <h2>Conheça um pouco sobre mim</h2>
             <p>Sou desenvolvedor FULL-STACK em constante aprendizagem.</p>
             <p>
-                Iniciando na carreira como desenvolvedo, e procurando sempre o
+                Iniciando na carreira como desenvolvedor, e procurando sempre o
                 desenvolvimento profissional e pessoal.
             </p>
         </div>
